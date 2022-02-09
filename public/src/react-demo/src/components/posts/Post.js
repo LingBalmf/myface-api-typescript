@@ -1,25 +1,30 @@
 import React from "react";
 
-
 export function Post({ post }) {
 
     let likedByArray = [];
-    let dislikedByArray=[];
+    let dislikedByArray = [];
 
-    post.likedBy.forEach(person => {
-        likedByArray.push(<li>{person.name}</li>);
+    post.likedBy?.forEach(person => {
+        likedByArray.push(<li key={person.id}>{person.name}</li>);
     });
-    post.dislikedBy.forEach(person => {
-        dislikedByArray.push(<li>{person.name}</li>);
+    post.dislikedBy?.forEach(person => {
+        dislikedByArray.push(<li key={person.id}>{person.name}</li>);
     });
-
-    console.log(likedByArray);
 
     return <div>
         <h2>{post.message}</h2>
         <img src={post.imageUrl} alt={post.message} />
-        <p>Posted by {post.postedBy.name} on {post.createdAt}</p>
-        <p>{post.likedBy.length} 👍 {post.dislikedBy.length} 👎</p>
-        <ol>Liked by {likedByArray}</ol>
+        {post.postedBy ? (
+            <p>Posted by {post.postedBy.name} on {post.createdAt}</p>
+        ) : <p>By Anonymous</p>}
+
+        <p>{post.likedBy ? post.likedBy.length : '0'} 👍 {post.dislikedBy ? post.dislikedBy.length : '0'} 👎</p>
+        {likedByArray.length ? (
+            <>
+                Liked by
+                <ol>{likedByArray}</ol>
+            </>
+        ) : null}
     </div>
 }
