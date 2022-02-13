@@ -1,0 +1,29 @@
+@import "../../constants.scss";
+
+.navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .links {
+    display: flex;
+    width: 70vw;
+    gap: 2vw;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: $foreground;
+        text-decoration: none;
+
+        &:first-child {
+            flex-grow: 1;
+          }
+
+          &:last-child {
+            flex-grow: 1;
+            text-align: end;
+          } 
+    }
+  }

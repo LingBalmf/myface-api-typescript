@@ -1,0 +1,28 @@
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 40px calc((100% - 765px) / 2);
+}
+
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 33%;
+    border-width: 5px;
+    border-color: grey;
+    border-style: solid;
+    background-color: navy
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (min-width: 600px) {
+    .post-info {
+        flex-basis: calc(33% - 20px);
+    }
+}

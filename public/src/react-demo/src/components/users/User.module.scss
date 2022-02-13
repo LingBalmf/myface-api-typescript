@@ -1,0 +1,15 @@
+@import "../../constants.scss";
+
+.link {
+    color: $foreground;
+    text-decoration : none;
+    font-size: 10px;
+
+}
+
+.postImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+ 
+}
